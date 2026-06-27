@@ -1,0 +1,1026 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00FE01C5E4B253D152698F64 /* GlookoHTTPTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B762EBF6874FDA7262EBAA16 /* GlookoHTTPTransport.swift */; };
+		012467A9698F6EFD7BC1D2C9 /* GlookoDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729D97CAB74E3AB9E43F4E09 /* GlookoDate.swift */; };
+		0A80575B2D2AF3E14ABA1AC7 /* HKUnit+Glooko.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4753DAA260810F50613067D /* HKUnit+Glooko.swift */; };
+		0E83A6FB7D8199D3FD292C08 /* MockHTTPTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFD036A8C11C385F1C72B24 /* MockHTTPTransport.swift */; };
+		130181B2652FB692DA401474 /* XTRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208D1D9A6970B28A619FD9E7 /* XTRecordTests.swift */; };
+		1754912A8BE30CBDA719176F /* GlookoClassicAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F49D963D675BDA133B082C /* GlookoClassicAPI.swift */; };
+		236818B3B14C13537BFFEF9C /* GlookoClassicDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC3E045439633BD359E7BB /* GlookoClassicDTO.swift */; };
+		3BB0484333AE5E522B797B96 /* GlookoVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B8DE67FDB64BF70EE85D1B /* GlookoVariant.swift */; };
+		4061C21360B205AF5F258AE8 /* GlookoServiceKitPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2D8560C60744722848779F /* GlookoServiceKitPlugin.swift */; };
+		4281F8D992C9C854DD7743D4 /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9363455E81ECF5C8E2421B91 /* LoopKit.framework */; };
+		449637ED7D0340E10F5017CD /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A71D8DBFA440C66EDE4E4A /* DomainTests.swift */; };
+		48840D48FE399B7AE64F09A9 /* GlookoXTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72904CCBF090D9167F43889 /* GlookoXTClient.swift */; };
+		4A964E044CD08E41D4D38EC8 /* GlookoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C7EC767142C0D3CE35D456 /* GlookoService.swift */; };
+		51880F10C922195939F29195 /* GlookoClassicRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B40E6524CDCB76293A140 /* GlookoClassicRegion.swift */; };
+		5DCC7FFD97B358253C367367 /* GlookoCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37CE43A3EC2B4DEFF2BAB26 /* GlookoCredentials.swift */; };
+		5F739B1FF80CE3C068F106B2 /* GlookoService+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5596CAF17A07F7EEA63A3B9C /* GlookoService+Auth.swift */; };
+		607C1F1278114D670624D094 /* GlookoXTBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756F0CD862F969B45C684E4B /* GlookoXTBackend.swift */; };
+		61160036A6C6C515786241C6 /* GlookoUploadCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07752C98DEBE3F5C96647A41 /* GlookoUploadCoordinator.swift */; };
+		61A845B0E1A1435A1A1C6E00 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2957ABF89928596AC4F5A64 /* Foundation.framework */; };
+		62174312B9F79223550F67DE /* AsyncTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3EC9C4A8629C2F88945BC8 /* AsyncTesting.swift */; };
+		66C4E069FA32BD9D908264CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2957ABF89928596AC4F5A64 /* Foundation.framework */; };
+		68435E953FAE8A87596AD514 /* GlookoCredentialStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67388AAEEC05D06FB96D0780 /* GlookoCredentialStore.swift */; };
+		69CAF4AD80AB5D9090174D6F /* LoopKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0818816CFFBA25C9B444C22 /* LoopKitUI.framework */; };
+		73EBA9BFE5D36A21444DB960 /* GlookoLibreViewCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69DDEBB04C59C0B8C063D4D /* GlookoLibreViewCSV.swift */; };
+		7FF2EB0D449B634044E5E4BF /* GlookoServiceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DA565F8BF12243AB8459D6 /* GlookoServiceKit.framework */; };
+		867B15CEF4FFFA15610C25CB /* GlookoSignInMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDA859BE14834205BDFEC85 /* GlookoSignInMessage.swift */; };
+		86E7C021C01770B40115DB4B /* GlookoClassicBackendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC0DCD35E56EB7D3CF15D2D /* GlookoClassicBackendTests.swift */; };
+		8C075AD31A83D3B1D9BE6ACC /* GlookoSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142D71676A9C02C3AC913996 /* GlookoSettingsView.swift */; };
+		8E1BFA337BEDC9D969B05655 /* CredentialStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E87894F227C9815BA07061 /* CredentialStoreTests.swift */; };
+		945F96FCD02251204C290ADE /* GlookoSocketIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A311C0C2500F512D358AD /* GlookoSocketIO.swift */; };
+		985551CCAC480C7F4B2CB513 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2957ABF89928596AC4F5A64 /* Foundation.framework */; };
+		9F7C131F3E8A5781E1E75EFA /* GlookoXTClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2442975EF5165798A2930B0 /* GlookoXTClientTests.swift */; };
+		A2968978086E6C3DB7B657C5 /* GlookoClassicBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8BD7AD6349425C85820FF6 /* GlookoClassicBackend.swift */; };
+		ACAE87E1FA8F7A6E187C1C32 /* GlookoConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBED413C39F13F9C40618744 /* GlookoConstants.swift */; };
+		AED61BA1F26FA38E30839175 /* GlookoServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBF97C28172F3C1B2068FCE /* GlookoServiceTests.swift */; };
+		B5F91A2CE01A75B491A0CFA5 /* GlookoLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D64DE5E914C2273EB5155B /* GlookoLog.swift */; };
+		BA9C687EFA933B690283CB0C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2957ABF89928596AC4F5A64 /* Foundation.framework */; };
+		BF6688B340D4818646B884A3 /* GlookoService+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E73F5083BFCCA8E1B9A257 /* GlookoService+UI.swift */; };
+		CA8DB114D8B80AB7E8718A25 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C8E1349E3638B103B8EEB /* LocalizedString.swift */; };
+		CBD74E38E3BAE958ED28B089 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9163D7CD9D3EB76B9B07DC08 /* LocalizedString.swift */; };
+		D97408DBE8A5BA228F8A2406 /* GlookoAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45332C4F779855F755FB2F2D /* GlookoAPIError.swift */; };
+		D9A8AD54EB446F065FF27F6E /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4456B9BB27D502AC92E6D958 /* LoopKit.framework */; };
+		DBA1A31220C395E0BC1F7BE4 /* GlookoIBFHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C951B20D3D61D0F25E15DCE /* GlookoIBFHeaders.swift */; };
+		DD23F3451AB7587D14B23DA2 /* GlookoBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715B7F256AD853F9281E3BE /* GlookoBackend.swift */; };
+		DE4CD38C0D12F94C1B4FA8E6 /* GlookoIBFGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B492C424357C1470E97957 /* GlookoIBFGenerator.swift */; };
+		E6FF81D8EFB361E01815C8DA /* GlookoDeflate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDACBAF2299C0271BF8D4D0 /* GlookoDeflate.swift */; };
+		E7D3B27AF74500FCB1B075AE /* GlookoClassicDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DA87519121828FAA412A39 /* GlookoClassicDTOTests.swift */; };
+		EC638B33C20AA2352D2D874B /* GlookoRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB2DC7AB38967AAE9A8DD8 /* GlookoRecord.swift */; };
+		EE98EC8404645ED7A92EF814 /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A55F68395D985D29064ED8 /* LoopKit.framework */; };
+		F0E018D12307CAA435FEC200 /* GlookoClassicAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE2E5720B00B7634505579 /* GlookoClassicAPITests.swift */; };
+		FC881849CC10C56E51DE1805 /* GlucoseUnitPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E07653689FE5430DE92001 /* GlucoseUnitPreference.swift */; };
+		FD4B8BD63747CD54EEF715D5 /* GlookoIBFGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8104DC853205F6386727031B /* GlookoIBFGeneratorTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A8A8540FD7372D90BF08C6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F8D52DEC944D2EF4686BE18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECB66D3D937AA5896ED269AE;
+			remoteInfo = GlookoServiceKit;
+		};
+		58AD7448BA4371E2CD42DAE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F8D52DEC944D2EF4686BE18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECB66D3D937AA5896ED269AE;
+			remoteInfo = GlookoServiceKit;
+		};
+		7B1C3205FF1179E318C96D9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F8D52DEC944D2EF4686BE18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECB66D3D937AA5896ED269AE;
+			remoteInfo = GlookoServiceKit;
+		};
+		E2EDE348460210E77208F29C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F8D52DEC944D2EF4686BE18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89B0F88A6A442F805BE6B958;
+			remoteInfo = GlookoServiceKitUI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		024B40E6524CDCB76293A140 /* GlookoClassicRegion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoClassicRegion.swift; path = GlookoServiceKit/Domain/Models/GlookoClassicRegion.swift; sourceTree = "<group>"; };
+		07752C98DEBE3F5C96647A41 /* GlookoUploadCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoUploadCoordinator.swift; path = GlookoServiceKit/Domain/GlookoUploadCoordinator.swift; sourceTree = "<group>"; };
+		09DA87519121828FAA412A39 /* GlookoClassicDTOTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoClassicDTOTests.swift; path = GlookoServiceKitTests/GlookoClassicDTOTests.swift; sourceTree = "<group>"; };
+		0BDC3E045439633BD359E7BB /* GlookoClassicDTO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoClassicDTO.swift; path = GlookoServiceKit/Data/Classic/GlookoClassicDTO.swift; sourceTree = "<group>"; };
+		142D71676A9C02C3AC913996 /* GlookoSettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoSettingsView.swift; path = GlookoServiceKitUI/GlookoSettingsView.swift; sourceTree = "<group>"; };
+		161A311C0C2500F512D358AD /* GlookoSocketIO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoSocketIO.swift; path = GlookoServiceKit/Data/Transport/GlookoSocketIO.swift; sourceTree = "<group>"; };
+		17D64DE5E914C2273EB5155B /* GlookoLog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoLog.swift; path = GlookoServiceKit/Core/GlookoLog.swift; sourceTree = "<group>"; };
+		19A55F68395D985D29064ED8 /* LoopKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LoopKit.framework; path = LoopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FC0DCD35E56EB7D3CF15D2D /* GlookoClassicBackendTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoClassicBackendTests.swift; path = GlookoServiceKitTests/GlookoClassicBackendTests.swift; sourceTree = "<group>"; };
+		1FEE2E5720B00B7634505579 /* GlookoClassicAPITests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoClassicAPITests.swift; path = GlookoServiceKitTests/GlookoClassicAPITests.swift; sourceTree = "<group>"; };
+		208D1D9A6970B28A619FD9E7 /* XTRecordTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XTRecordTests.swift; path = GlookoServiceKitTests/XTRecordTests.swift; sourceTree = "<group>"; };
+		20E07653689FE5430DE92001 /* GlucoseUnitPreference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlucoseUnitPreference.swift; path = GlookoServiceKit/Domain/Models/GlucoseUnitPreference.swift; sourceTree = "<group>"; };
+		24A71D8DBFA440C66EDE4E4A /* DomainTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DomainTests.swift; path = GlookoServiceKitTests/DomainTests.swift; sourceTree = "<group>"; };
+		2CDACBAF2299C0271BF8D4D0 /* GlookoDeflate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoDeflate.swift; path = GlookoServiceKit/Core/GlookoDeflate.swift; sourceTree = "<group>"; };
+		33E87894F227C9815BA07061 /* CredentialStoreTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CredentialStoreTests.swift; path = GlookoServiceKitTests/CredentialStoreTests.swift; sourceTree = "<group>"; };
+		4456B9BB27D502AC92E6D958 /* LoopKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LoopKit.framework; path = LoopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45332C4F779855F755FB2F2D /* GlookoAPIError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoAPIError.swift; path = GlookoServiceKit/Domain/Models/GlookoAPIError.swift; sourceTree = "<group>"; };
+		5596CAF17A07F7EEA63A3B9C /* GlookoService+Auth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "GlookoService+Auth.swift"; path = "GlookoServiceKit/Service/GlookoService+Auth.swift"; sourceTree = "<group>"; };
+		5C951B20D3D61D0F25E15DCE /* GlookoIBFHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoIBFHeaders.swift; path = GlookoServiceKit/Domain/IBF/GlookoIBFHeaders.swift; sourceTree = "<group>"; };
+		5CBF97C28172F3C1B2068FCE /* GlookoServiceTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoServiceTests.swift; path = GlookoServiceKitTests/GlookoServiceTests.swift; sourceTree = "<group>"; };
+		67388AAEEC05D06FB96D0780 /* GlookoCredentialStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoCredentialStore.swift; path = GlookoServiceKit/Data/Auth/GlookoCredentialStore.swift; sourceTree = "<group>"; };
+		729D97CAB74E3AB9E43F4E09 /* GlookoDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoDate.swift; path = GlookoServiceKit/Core/GlookoDate.swift; sourceTree = "<group>"; };
+		756F0CD862F969B45C684E4B /* GlookoXTBackend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoXTBackend.swift; path = GlookoServiceKit/Data/XT/GlookoXTBackend.swift; sourceTree = "<group>"; };
+		78B492C424357C1470E97957 /* GlookoIBFGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoIBFGenerator.swift; path = GlookoServiceKit/Domain/IBF/GlookoIBFGenerator.swift; sourceTree = "<group>"; };
+		8104DC853205F6386727031B /* GlookoIBFGeneratorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoIBFGeneratorTests.swift; path = GlookoServiceKitTests/GlookoIBFGeneratorTests.swift; sourceTree = "<group>"; };
+		9163D7CD9D3EB76B9B07DC08 /* LocalizedString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocalizedString.swift; path = GlookoServiceKitUI/LocalizedString.swift; sourceTree = "<group>"; };
+		9363455E81ECF5C8E2421B91 /* LoopKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LoopKit.framework; path = LoopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D2D8560C60744722848779F /* GlookoServiceKitPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoServiceKitPlugin.swift; path = GlookoServiceKitPlugin/GlookoServiceKitPlugin.swift; sourceTree = "<group>"; };
+		9F52972A3C5682F0E23193D7 /* GlookoServiceKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlookoServiceKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A69DDEBB04C59C0B8C063D4D /* GlookoLibreViewCSV.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoLibreViewCSV.swift; path = GlookoServiceKit/Domain/CSV/GlookoLibreViewCSV.swift; sourceTree = "<group>"; };
+		AB8BD7AD6349425C85820FF6 /* GlookoClassicBackend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoClassicBackend.swift; path = GlookoServiceKit/Data/Classic/GlookoClassicBackend.swift; sourceTree = "<group>"; };
+		B2442975EF5165798A2930B0 /* GlookoXTClientTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoXTClientTests.swift; path = GlookoServiceKitTests/GlookoXTClientTests.swift; sourceTree = "<group>"; };
+		B5DA565F8BF12243AB8459D6 /* GlookoServiceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GlookoServiceKit.framework; path = GlookoServiceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B762EBF6874FDA7262EBAA16 /* GlookoHTTPTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoHTTPTransport.swift; path = GlookoServiceKit/Data/Transport/GlookoHTTPTransport.swift; sourceTree = "<group>"; };
+		B883B8BFED5E2B5D47773C76 /* GlookoServiceKitPlugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlookoServiceKitPlugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4753DAA260810F50613067D /* HKUnit+Glooko.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HKUnit+Glooko.swift"; path = "GlookoServiceKit/Core/HKUnit+Glooko.swift"; sourceTree = "<group>"; };
+		C6C7EC767142C0D3CE35D456 /* GlookoService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoService.swift; path = GlookoServiceKit/Service/GlookoService.swift; sourceTree = "<group>"; };
+		C72904CCBF090D9167F43889 /* GlookoXTClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoXTClient.swift; path = GlookoServiceKit/Data/XT/GlookoXTClient.swift; sourceTree = "<group>"; };
+		CD31E024B26E43B8AAEC818B /* GlookoServiceKitUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlookoServiceKitUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDFD036A8C11C385F1C72B24 /* MockHTTPTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MockHTTPTransport.swift; path = GlookoServiceKitTests/Support/MockHTTPTransport.swift; sourceTree = "<group>"; };
+		D1E73F5083BFCCA8E1B9A257 /* GlookoService+UI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "GlookoService+UI.swift"; path = "GlookoServiceKitUI/GlookoService+UI.swift"; sourceTree = "<group>"; };
+		D533088BE746CE37AAF31CB5 /* GlookoServiceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlookoServiceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5B8DE67FDB64BF70EE85D1B /* GlookoVariant.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoVariant.swift; path = GlookoServiceKit/Domain/Models/GlookoVariant.swift; sourceTree = "<group>"; };
+		DF3EC9C4A8629C2F88945BC8 /* AsyncTesting.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncTesting.swift; path = GlookoServiceKitTests/Support/AsyncTesting.swift; sourceTree = "<group>"; };
+		E2957ABF89928596AC4F5A64 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E35C8E1349E3638B103B8EEB /* LocalizedString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocalizedString.swift; path = GlookoServiceKit/Core/LocalizedString.swift; sourceTree = "<group>"; };
+		F0818816CFFBA25C9B444C22 /* LoopKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LoopKitUI.framework; path = LoopKitUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F37CE43A3EC2B4DEFF2BAB26 /* GlookoCredentials.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoCredentials.swift; path = GlookoServiceKit/Data/Auth/GlookoCredentials.swift; sourceTree = "<group>"; };
+		F3EB2DC7AB38967AAE9A8DD8 /* GlookoRecord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoRecord.swift; path = GlookoServiceKit/Data/XT/GlookoRecord.swift; sourceTree = "<group>"; };
+		F5F49D963D675BDA133B082C /* GlookoClassicAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoClassicAPI.swift; path = GlookoServiceKit/Data/Classic/GlookoClassicAPI.swift; sourceTree = "<group>"; };
+		F715B7F256AD853F9281E3BE /* GlookoBackend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoBackend.swift; path = GlookoServiceKit/Domain/GlookoBackend.swift; sourceTree = "<group>"; };
+		FBED413C39F13F9C40618744 /* GlookoConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoConstants.swift; path = GlookoServiceKit/Core/GlookoConstants.swift; sourceTree = "<group>"; };
+		FFDA859BE14834205BDFEC85 /* GlookoSignInMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoSignInMessage.swift; path = GlookoServiceKit/Domain/Models/GlookoSignInMessage.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4BC3FE793EC8670EE96ADAE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				985551CCAC480C7F4B2CB513 /* Foundation.framework in Frameworks */,
+				EE98EC8404645ED7A92EF814 /* LoopKit.framework in Frameworks */,
+				69CAF4AD80AB5D9090174D6F /* LoopKitUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6EC226A1666F4C67406A071 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61A845B0E1A1435A1A1C6E00 /* Foundation.framework in Frameworks */,
+				D9A8AD54EB446F065FF27F6E /* LoopKit.framework in Frameworks */,
+				7FF2EB0D449B634044E5E4BF /* GlookoServiceKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9CEEBBBC2E595592499995E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66C4E069FA32BD9D908264CD /* Foundation.framework in Frameworks */,
+				4281F8D992C9C854DD7743D4 /* LoopKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDAE424A8ACC82FF1984A638 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA9C687EFA933B690283CB0C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		049DB4A9EB84D4CE8E148022 /* GlookoServiceKitUI */ = {
+			isa = PBXGroup;
+			children = (
+				D1E73F5083BFCCA8E1B9A257 /* GlookoService+UI.swift */,
+				142D71676A9C02C3AC913996 /* GlookoSettingsView.swift */,
+				9163D7CD9D3EB76B9B07DC08 /* LocalizedString.swift */,
+			);
+			name = GlookoServiceKitUI;
+			sourceTree = "<group>";
+		};
+		0724DE634F10926FD1D07146 /* GlookoServiceKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				33E87894F227C9815BA07061 /* CredentialStoreTests.swift */,
+				24A71D8DBFA440C66EDE4E4A /* DomainTests.swift */,
+				1FEE2E5720B00B7634505579 /* GlookoClassicAPITests.swift */,
+				1FC0DCD35E56EB7D3CF15D2D /* GlookoClassicBackendTests.swift */,
+				09DA87519121828FAA412A39 /* GlookoClassicDTOTests.swift */,
+				8104DC853205F6386727031B /* GlookoIBFGeneratorTests.swift */,
+				5CBF97C28172F3C1B2068FCE /* GlookoServiceTests.swift */,
+				B2442975EF5165798A2930B0 /* GlookoXTClientTests.swift */,
+				8DE43AE7D52E94FFA663633F /* Support */,
+				208D1D9A6970B28A619FD9E7 /* XTRecordTests.swift */,
+			);
+			name = GlookoServiceKitTests;
+			sourceTree = "<group>";
+		};
+		0F86E0145DD336DCEB6A8DD6 /* GlookoServiceKitPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				9D2D8560C60744722848779F /* GlookoServiceKitPlugin.swift */,
+			);
+			name = GlookoServiceKitPlugin;
+			sourceTree = "<group>";
+		};
+		2379889C252C4C711939054B /* CSV */ = {
+			isa = PBXGroup;
+			children = (
+				A69DDEBB04C59C0B8C063D4D /* GlookoLibreViewCSV.swift */,
+			);
+			name = CSV;
+			sourceTree = "<group>";
+		};
+		2725388171FB9CB8C877E6C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33AC5F4B58A32FC737E6A8AF /* iOS */,
+				9363455E81ECF5C8E2421B91 /* LoopKit.framework */,
+				19A55F68395D985D29064ED8 /* LoopKit.framework */,
+				F0818816CFFBA25C9B444C22 /* LoopKitUI.framework */,
+				4456B9BB27D502AC92E6D958 /* LoopKit.framework */,
+				B5DA565F8BF12243AB8459D6 /* GlookoServiceKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33AC5F4B58A32FC737E6A8AF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E2957ABF89928596AC4F5A64 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		37AF48F39B13719CC6E6ACDC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BCC06F946B69826542DFD1D6 /* Auth */,
+				62010390BEB0543EDE2014C9 /* Classic */,
+				F452D9871EB1E427C0E92BBF /* Transport */,
+				5013C0EC1A76FE16C36AFDC9 /* XT */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		4732437F527A3E645D3A797F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2379889C252C4C711939054B /* CSV */,
+				F715B7F256AD853F9281E3BE /* GlookoBackend.swift */,
+				07752C98DEBE3F5C96647A41 /* GlookoUploadCoordinator.swift */,
+				F3960A598E6F382B451A74F0 /* IBF */,
+				7F68E1A89DFDAFDDD95950E1 /* Models */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
+		5013C0EC1A76FE16C36AFDC9 /* XT */ = {
+			isa = PBXGroup;
+			children = (
+				F3EB2DC7AB38967AAE9A8DD8 /* GlookoRecord.swift */,
+				756F0CD862F969B45C684E4B /* GlookoXTBackend.swift */,
+				C72904CCBF090D9167F43889 /* GlookoXTClient.swift */,
+			);
+			name = XT;
+			sourceTree = "<group>";
+		};
+		62010390BEB0543EDE2014C9 /* Classic */ = {
+			isa = PBXGroup;
+			children = (
+				F5F49D963D675BDA133B082C /* GlookoClassicAPI.swift */,
+				AB8BD7AD6349425C85820FF6 /* GlookoClassicBackend.swift */,
+				0BDC3E045439633BD359E7BB /* GlookoClassicDTO.swift */,
+			);
+			name = Classic;
+			sourceTree = "<group>";
+		};
+		7F68E1A89DFDAFDDD95950E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				45332C4F779855F755FB2F2D /* GlookoAPIError.swift */,
+				024B40E6524CDCB76293A140 /* GlookoClassicRegion.swift */,
+				FFDA859BE14834205BDFEC85 /* GlookoSignInMessage.swift */,
+				D5B8DE67FDB64BF70EE85D1B /* GlookoVariant.swift */,
+				20E07653689FE5430DE92001 /* GlucoseUnitPreference.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		8DE43AE7D52E94FFA663633F /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				DF3EC9C4A8629C2F88945BC8 /* AsyncTesting.swift */,
+				CDFD036A8C11C385F1C72B24 /* MockHTTPTransport.swift */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		A05CADE26AEC5A168BFE3DCB = {
+			isa = PBXGroup;
+			children = (
+				FE7C24BF6FF97A1F2525A3F0 /* Products */,
+				2725388171FB9CB8C877E6C9 /* Frameworks */,
+				B89C46E6DA8D1B541448B660 /* GlookoServiceKit */,
+				049DB4A9EB84D4CE8E148022 /* GlookoServiceKitUI */,
+				0F86E0145DD336DCEB6A8DD6 /* GlookoServiceKitPlugin */,
+				0724DE634F10926FD1D07146 /* GlookoServiceKitTests */,
+			);
+			sourceTree = "<group>";
+		};
+		A339DBF128C264298C1E49AB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FBED413C39F13F9C40618744 /* GlookoConstants.swift */,
+				729D97CAB74E3AB9E43F4E09 /* GlookoDate.swift */,
+				2CDACBAF2299C0271BF8D4D0 /* GlookoDeflate.swift */,
+				17D64DE5E914C2273EB5155B /* GlookoLog.swift */,
+				C4753DAA260810F50613067D /* HKUnit+Glooko.swift */,
+				E35C8E1349E3638B103B8EEB /* LocalizedString.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		B89C46E6DA8D1B541448B660 /* GlookoServiceKit */ = {
+			isa = PBXGroup;
+			children = (
+				A339DBF128C264298C1E49AB /* Core */,
+				37AF48F39B13719CC6E6ACDC /* Data */,
+				4732437F527A3E645D3A797F /* Domain */,
+				C34B2B5D17C1BB6D75907D08 /* Service */,
+			);
+			name = GlookoServiceKit;
+			sourceTree = "<group>";
+		};
+		BCC06F946B69826542DFD1D6 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				67388AAEEC05D06FB96D0780 /* GlookoCredentialStore.swift */,
+				F37CE43A3EC2B4DEFF2BAB26 /* GlookoCredentials.swift */,
+			);
+			name = Auth;
+			sourceTree = "<group>";
+		};
+		C34B2B5D17C1BB6D75907D08 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5596CAF17A07F7EEA63A3B9C /* GlookoService+Auth.swift */,
+				C6C7EC767142C0D3CE35D456 /* GlookoService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		F3960A598E6F382B451A74F0 /* IBF */ = {
+			isa = PBXGroup;
+			children = (
+				78B492C424357C1470E97957 /* GlookoIBFGenerator.swift */,
+				5C951B20D3D61D0F25E15DCE /* GlookoIBFHeaders.swift */,
+			);
+			name = IBF;
+			sourceTree = "<group>";
+		};
+		F452D9871EB1E427C0E92BBF /* Transport */ = {
+			isa = PBXGroup;
+			children = (
+				B762EBF6874FDA7262EBAA16 /* GlookoHTTPTransport.swift */,
+				161A311C0C2500F512D358AD /* GlookoSocketIO.swift */,
+			);
+			name = Transport;
+			sourceTree = "<group>";
+		};
+		FE7C24BF6FF97A1F2525A3F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D533088BE746CE37AAF31CB5 /* GlookoServiceKit.framework */,
+				CD31E024B26E43B8AAEC818B /* GlookoServiceKitUI.framework */,
+				B883B8BFED5E2B5D47773C76 /* GlookoServiceKitPlugin.framework */,
+				9F52972A3C5682F0E23193D7 /* GlookoServiceKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0A5F379DAABB2B94A1B4FA6C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C88A18862F0F1D28E183422 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AD385BC2A3D89E9B0CB5A5F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2068E1037A9A8132EE49B525 /* GlookoServiceKitPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B124BB59EDA38C3D4CF69442 /* Build configuration list for PBXNativeTarget "GlookoServiceKitPlugin" */;
+			buildPhases = (
+				9AD385BC2A3D89E9B0CB5A5F /* Headers */,
+				43E17E7B42A9D0231A7140C3 /* Sources */,
+				EDAE424A8ACC82FF1984A638 /* Frameworks */,
+				937327164136D1A4D82B425C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				72868104562F82F8B025FDC1 /* PBXTargetDependency */,
+				3FE0864C6A5602DA4490F615 /* PBXTargetDependency */,
+			);
+			name = GlookoServiceKitPlugin;
+			productName = GlookoServiceKitPlugin;
+			productReference = B883B8BFED5E2B5D47773C76 /* GlookoServiceKitPlugin.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		578120E29667DA9A4436117A /* GlookoServiceKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9298147AE37826909CAB03B1 /* Build configuration list for PBXNativeTarget "GlookoServiceKitTests" */;
+			buildPhases = (
+				7F2959D204C1F733FE9157D4 /* Sources */,
+				A6EC226A1666F4C67406A071 /* Frameworks */,
+				FD2AD079EA36C6B80346BE2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1400DAE2D2FD8D7310826C17 /* PBXTargetDependency */,
+			);
+			name = GlookoServiceKitTests;
+			productName = GlookoServiceKitTests;
+			productReference = 9F52972A3C5682F0E23193D7 /* GlookoServiceKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		89B0F88A6A442F805BE6B958 /* GlookoServiceKitUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CCEC26857F2F8B7AAE8C3B9 /* Build configuration list for PBXNativeTarget "GlookoServiceKitUI" */;
+			buildPhases = (
+				1C88A18862F0F1D28E183422 /* Headers */,
+				ECF4E792007679F2A8353DFE /* Sources */,
+				4BC3FE793EC8670EE96ADAE5 /* Frameworks */,
+				537733DF696E74B1399E6254 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E4B37CC94999D1E05E47C92 /* PBXTargetDependency */,
+			);
+			name = GlookoServiceKitUI;
+			productName = GlookoServiceKitUI;
+			productReference = CD31E024B26E43B8AAEC818B /* GlookoServiceKitUI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ECB66D3D937AA5896ED269AE /* GlookoServiceKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A23A73F428AE1AFC710B485 /* Build configuration list for PBXNativeTarget "GlookoServiceKit" */;
+			buildPhases = (
+				0A5F379DAABB2B94A1B4FA6C /* Headers */,
+				7B444FC209B2BBC38F1A67F7 /* Sources */,
+				B9CEEBBBC2E595592499995E /* Frameworks */,
+				2EA0C45D6724231190DF0EC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GlookoServiceKit;
+			productName = GlookoServiceKit;
+			productReference = D533088BE746CE37AAF31CB5 /* GlookoServiceKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F8D52DEC944D2EF4686BE18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 97B83A878103536CED80FF38 /* Build configuration list for PBXProject "GlookoServiceKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A05CADE26AEC5A168BFE3DCB;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = FE7C24BF6FF97A1F2525A3F0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECB66D3D937AA5896ED269AE /* GlookoServiceKit */,
+				89B0F88A6A442F805BE6B958 /* GlookoServiceKitUI */,
+				2068E1037A9A8132EE49B525 /* GlookoServiceKitPlugin */,
+				578120E29667DA9A4436117A /* GlookoServiceKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2EA0C45D6724231190DF0EC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		537733DF696E74B1399E6254 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		937327164136D1A4D82B425C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD2AD079EA36C6B80346BE2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43E17E7B42A9D0231A7140C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4061C21360B205AF5F258AE8 /* GlookoServiceKitPlugin.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B444FC209B2BBC38F1A67F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACAE87E1FA8F7A6E187C1C32 /* GlookoConstants.swift in Sources */,
+				012467A9698F6EFD7BC1D2C9 /* GlookoDate.swift in Sources */,
+				E6FF81D8EFB361E01815C8DA /* GlookoDeflate.swift in Sources */,
+				B5F91A2CE01A75B491A0CFA5 /* GlookoLog.swift in Sources */,
+				0A80575B2D2AF3E14ABA1AC7 /* HKUnit+Glooko.swift in Sources */,
+				CA8DB114D8B80AB7E8718A25 /* LocalizedString.swift in Sources */,
+				68435E953FAE8A87596AD514 /* GlookoCredentialStore.swift in Sources */,
+				5DCC7FFD97B358253C367367 /* GlookoCredentials.swift in Sources */,
+				1754912A8BE30CBDA719176F /* GlookoClassicAPI.swift in Sources */,
+				A2968978086E6C3DB7B657C5 /* GlookoClassicBackend.swift in Sources */,
+				236818B3B14C13537BFFEF9C /* GlookoClassicDTO.swift in Sources */,
+				00FE01C5E4B253D152698F64 /* GlookoHTTPTransport.swift in Sources */,
+				945F96FCD02251204C290ADE /* GlookoSocketIO.swift in Sources */,
+				EC638B33C20AA2352D2D874B /* GlookoRecord.swift in Sources */,
+				607C1F1278114D670624D094 /* GlookoXTBackend.swift in Sources */,
+				48840D48FE399B7AE64F09A9 /* GlookoXTClient.swift in Sources */,
+				73EBA9BFE5D36A21444DB960 /* GlookoLibreViewCSV.swift in Sources */,
+				DD23F3451AB7587D14B23DA2 /* GlookoBackend.swift in Sources */,
+				61160036A6C6C515786241C6 /* GlookoUploadCoordinator.swift in Sources */,
+				DE4CD38C0D12F94C1B4FA8E6 /* GlookoIBFGenerator.swift in Sources */,
+				DBA1A31220C395E0BC1F7BE4 /* GlookoIBFHeaders.swift in Sources */,
+				D97408DBE8A5BA228F8A2406 /* GlookoAPIError.swift in Sources */,
+				51880F10C922195939F29195 /* GlookoClassicRegion.swift in Sources */,
+				867B15CEF4FFFA15610C25CB /* GlookoSignInMessage.swift in Sources */,
+				3BB0484333AE5E522B797B96 /* GlookoVariant.swift in Sources */,
+				FC881849CC10C56E51DE1805 /* GlucoseUnitPreference.swift in Sources */,
+				5F739B1FF80CE3C068F106B2 /* GlookoService+Auth.swift in Sources */,
+				4A964E044CD08E41D4D38EC8 /* GlookoService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2959D204C1F733FE9157D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E1BFA337BEDC9D969B05655 /* CredentialStoreTests.swift in Sources */,
+				449637ED7D0340E10F5017CD /* DomainTests.swift in Sources */,
+				F0E018D12307CAA435FEC200 /* GlookoClassicAPITests.swift in Sources */,
+				86E7C021C01770B40115DB4B /* GlookoClassicBackendTests.swift in Sources */,
+				E7D3B27AF74500FCB1B075AE /* GlookoClassicDTOTests.swift in Sources */,
+				FD4B8BD63747CD54EEF715D5 /* GlookoIBFGeneratorTests.swift in Sources */,
+				AED61BA1F26FA38E30839175 /* GlookoServiceTests.swift in Sources */,
+				9F7C131F3E8A5781E1E75EFA /* GlookoXTClientTests.swift in Sources */,
+				62174312B9F79223550F67DE /* AsyncTesting.swift in Sources */,
+				0E83A6FB7D8199D3FD292C08 /* MockHTTPTransport.swift in Sources */,
+				130181B2652FB692DA401474 /* XTRecordTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECF4E792007679F2A8353DFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF6688B340D4818646B884A3 /* GlookoService+UI.swift in Sources */,
+				8C075AD31A83D3B1D9BE6ACC /* GlookoSettingsView.swift in Sources */,
+				CBD74E38E3BAE958ED28B089 /* LocalizedString.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1400DAE2D2FD8D7310826C17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GlookoServiceKit;
+			target = ECB66D3D937AA5896ED269AE /* GlookoServiceKit */;
+			targetProxy = 58AD7448BA4371E2CD42DAE4 /* PBXContainerItemProxy */;
+		};
+		3FE0864C6A5602DA4490F615 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GlookoServiceKitUI;
+			target = 89B0F88A6A442F805BE6B958 /* GlookoServiceKitUI */;
+			targetProxy = E2EDE348460210E77208F29C /* PBXContainerItemProxy */;
+		};
+		4E4B37CC94999D1E05E47C92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GlookoServiceKit;
+			target = ECB66D3D937AA5896ED269AE /* GlookoServiceKit */;
+			targetProxy = 7B1C3205FF1179E318C96D9A /* PBXContainerItemProxy */;
+		};
+		72868104562F82F8B025FDC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GlookoServiceKit;
+			target = ECB66D3D937AA5896ED269AE /* GlookoServiceKit */;
+			targetProxy = 4A8A8540FD7372D90BF08C6B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2A0313006F077290D6AD77E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nightscout.GlookoServiceKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		36749BCE7488AA7426359291 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nightscout.GlookoServiceKitTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4530C43691A94276AD29392D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GlookoServiceKitPlugin/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nightscout.GlookoServiceKitPlugin;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5FDD2D4BF6F961DD409045BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nightscout.GlookoServiceKitUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		61CD52DF6DCD84646EBB2CA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GlookoServiceKitPlugin/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nightscout.GlookoServiceKitPlugin;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9382A1F2F0EF116663B7519F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nightscout.GlookoServiceKitUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9A0C06726F6951AE431A799A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nightscout.GlookoServiceKitTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1955EB733BA3C26C90E7162 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nightscout.GlookoServiceKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AFA723CA337576D23787248E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F458AC4CEC76182C2CB4B8CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CCEC26857F2F8B7AAE8C3B9 /* Build configuration list for PBXNativeTarget "GlookoServiceKitUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9382A1F2F0EF116663B7519F /* Release */,
+				5FDD2D4BF6F961DD409045BB /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A23A73F428AE1AFC710B485 /* Build configuration list for PBXNativeTarget "GlookoServiceKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A0313006F077290D6AD77E3 /* Release */,
+				A1955EB733BA3C26C90E7162 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9298147AE37826909CAB03B1 /* Build configuration list for PBXNativeTarget "GlookoServiceKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36749BCE7488AA7426359291 /* Release */,
+				9A0C06726F6951AE431A799A /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97B83A878103536CED80FF38 /* Build configuration list for PBXProject "GlookoServiceKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F458AC4CEC76182C2CB4B8CA /* Debug */,
+				AFA723CA337576D23787248E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B124BB59EDA38C3D4CF69442 /* Build configuration list for PBXNativeTarget "GlookoServiceKitPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61CD52DF6DCD84646EBB2CA7 /* Release */,
+				4530C43691A94276AD29392D /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F8D52DEC944D2EF4686BE18 /* Project object */;
+}

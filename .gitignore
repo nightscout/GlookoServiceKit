@@ -1,0 +1,21 @@
+## OS
+.DS_Store
+
+## Build
+build/
+DerivedData
+.build/
+
+## Xcode user state
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.moved-aside
+*.hmap
+
+## Dependencies
+Carthage/
+Pods/
+
+## Local tooling
+.gem/
