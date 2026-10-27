@@ -19,14 +19,26 @@ enum GlookoConstants {
         static func patientApiBase(prefix: String) -> String {
             "https://\(prefix).patient-api.glooko.com"
         }
-
-        static let analyzerApiKey = "LkUiWKNcHvtKs8CckMzFPfLE"
-        static let analyzerSwid = "A18507"
-        static let analyzerExtractor = "InsuletOmnipod"
-        static func analyzerBase(from patientApiBase: String) -> String {
-            patientApiBase.replacingOccurrences(of: "patient-api", with: "upload")
-        }
     }
 
-    static let userAgent = "GlookoServiceKit GlookoAndroid/6.16.0"
+    static let repositoryURL = "https://github.com/nightscout/GlookoServiceKit"
+}
+
+/// Who is talking to Glooko. Sent as-is; never impersonates a Glooko client.
+public struct GlookoClientIdentity: Equatable {
+    public var hostIdentifier: String
+    public var hostVersion: String
+
+    public init(hostIdentifier: String = "unknown", hostVersion: String = "0") {
+        self.hostIdentifier = hostIdentifier
+        self.hostVersion = hostVersion
+    }
+
+    public var sourceName: String {
+        hostIdentifier.split(separator: ".").last.map(String.init) ?? hostIdentifier
+    }
+
+    public var userAgent: String {
+        "GlookoServiceKit (\(hostIdentifier)/\(hostVersion); +\(GlookoConstants.repositoryURL))"
+    }
 }

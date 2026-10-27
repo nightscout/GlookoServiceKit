@@ -17,13 +17,17 @@
 		3BB0484333AE5E522B797B96 /* GlookoVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B8DE67FDB64BF70EE85D1B /* GlookoVariant.swift */; };
 		4061C21360B205AF5F258AE8 /* GlookoServiceKitPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2D8560C60744722848779F /* GlookoServiceKitPlugin.swift */; };
 		4281F8D992C9C854DD7743D4 /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9363455E81ECF5C8E2421B91 /* LoopKit.framework */; };
+		F5BFD7F20488B3FB472BC457 /* GlookoHourlyBasalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B34454665A51FEAE642C72E /* GlookoHourlyBasalTests.swift */; };
+		8B9F30B7CAD09E59CFE50E57 /* GlookoClassicAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123FEA35FD529A9FF6D76F39 /* GlookoClassicAuthTests.swift */; };
 		449637ED7D0340E10F5017CD /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A71D8DBFA440C66EDE4E4A /* DomainTests.swift */; };
 		48840D48FE399B7AE64F09A9 /* GlookoXTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72904CCBF090D9167F43889 /* GlookoXTClient.swift */; };
 		4A964E044CD08E41D4D38EC8 /* GlookoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C7EC767142C0D3CE35D456 /* GlookoService.swift */; };
 		51880F10C922195939F29195 /* GlookoClassicRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B40E6524CDCB76293A140 /* GlookoClassicRegion.swift */; };
 		5DCC7FFD97B358253C367367 /* GlookoCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37CE43A3EC2B4DEFF2BAB26 /* GlookoCredentials.swift */; };
 		5F739B1FF80CE3C068F106B2 /* GlookoService+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5596CAF17A07F7EEA63A3B9C /* GlookoService+Auth.swift */; };
+		C10CA1E70000000000000001 /* GlookoService+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10CA1E70000000000000002 /* GlookoService+Alerts.swift */; };
 		607C1F1278114D670624D094 /* GlookoXTBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756F0CD862F969B45C684E4B /* GlookoXTBackend.swift */; };
+		D033FC8EC982644CD376405D /* GlookoHourlyBasal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01472F2AE01E02828EC487A /* GlookoHourlyBasal.swift */; };
 		61160036A6C6C515786241C6 /* GlookoUploadCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07752C98DEBE3F5C96647A41 /* GlookoUploadCoordinator.swift */; };
 		61A845B0E1A1435A1A1C6E00 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2957ABF89928596AC4F5A64 /* Foundation.framework */; };
 		62174312B9F79223550F67DE /* AsyncTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3EC9C4A8629C2F88945BC8 /* AsyncTesting.swift */; };
@@ -42,6 +46,7 @@
 		A2968978086E6C3DB7B657C5 /* GlookoClassicBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8BD7AD6349425C85820FF6 /* GlookoClassicBackend.swift */; };
 		ACAE87E1FA8F7A6E187C1C32 /* GlookoConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBED413C39F13F9C40618744 /* GlookoConstants.swift */; };
 		AED61BA1F26FA38E30839175 /* GlookoServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBF97C28172F3C1B2068FCE /* GlookoServiceTests.swift */; };
+		C10CA1E70000000000000003 /* GlookoAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10CA1E70000000000000004 /* GlookoAlertTests.swift */; };
 		B5F91A2CE01A75B491A0CFA5 /* GlookoLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D64DE5E914C2273EB5155B /* GlookoLog.swift */; };
 		BA9C687EFA933B690283CB0C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2957ABF89928596AC4F5A64 /* Foundation.framework */; };
 		BF6688B340D4818646B884A3 /* GlookoService+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E73F5083BFCCA8E1B9A257 /* GlookoService+UI.swift */; };
@@ -52,7 +57,7 @@
 		DBA1A31220C395E0BC1F7BE4 /* GlookoIBFHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C951B20D3D61D0F25E15DCE /* GlookoIBFHeaders.swift */; };
 		DD23F3451AB7587D14B23DA2 /* GlookoBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F715B7F256AD853F9281E3BE /* GlookoBackend.swift */; };
 		DE4CD38C0D12F94C1B4FA8E6 /* GlookoIBFGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B492C424357C1470E97957 /* GlookoIBFGenerator.swift */; };
-		E6FF81D8EFB361E01815C8DA /* GlookoDeflate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDACBAF2299C0271BF8D4D0 /* GlookoDeflate.swift */; };
+		E6FF81D8EFB361E01815C8DA /* GlookoGUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDACBAF2299C0271BF8D4D0 /* GlookoGUID.swift */; };
 		E7D3B27AF74500FCB1B075AE /* GlookoClassicDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DA87519121828FAA412A39 /* GlookoClassicDTOTests.swift */; };
 		EC638B33C20AA2352D2D874B /* GlookoRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB2DC7AB38967AAE9A8DD8 /* GlookoRecord.swift */; };
 		EE98EC8404645ED7A92EF814 /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A55F68395D985D29064ED8 /* LoopKit.framework */; };
@@ -94,6 +99,7 @@
 
 /* Begin PBXFileReference section */
 		024B40E6524CDCB76293A140 /* GlookoClassicRegion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoClassicRegion.swift; path = GlookoServiceKit/Domain/Models/GlookoClassicRegion.swift; sourceTree = "<group>"; };
+		F01472F2AE01E02828EC487A /* GlookoHourlyBasal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoHourlyBasal.swift; path = GlookoServiceKit/Domain/GlookoHourlyBasal.swift; sourceTree = "<group>"; };
 		07752C98DEBE3F5C96647A41 /* GlookoUploadCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoUploadCoordinator.swift; path = GlookoServiceKit/Domain/GlookoUploadCoordinator.swift; sourceTree = "<group>"; };
 		09DA87519121828FAA412A39 /* GlookoClassicDTOTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoClassicDTOTests.swift; path = GlookoServiceKitTests/GlookoClassicDTOTests.swift; sourceTree = "<group>"; };
 		0BDC3E045439633BD359E7BB /* GlookoClassicDTO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoClassicDTO.swift; path = GlookoServiceKit/Data/Classic/GlookoClassicDTO.swift; sourceTree = "<group>"; };
@@ -105,14 +111,18 @@
 		1FEE2E5720B00B7634505579 /* GlookoClassicAPITests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoClassicAPITests.swift; path = GlookoServiceKitTests/GlookoClassicAPITests.swift; sourceTree = "<group>"; };
 		208D1D9A6970B28A619FD9E7 /* XTRecordTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XTRecordTests.swift; path = GlookoServiceKitTests/XTRecordTests.swift; sourceTree = "<group>"; };
 		20E07653689FE5430DE92001 /* GlucoseUnitPreference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlucoseUnitPreference.swift; path = GlookoServiceKit/Domain/Models/GlucoseUnitPreference.swift; sourceTree = "<group>"; };
+		7B34454665A51FEAE642C72E /* GlookoHourlyBasalTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoHourlyBasalTests.swift; path = GlookoServiceKitTests/GlookoHourlyBasalTests.swift; sourceTree = "<group>"; };
+		123FEA35FD529A9FF6D76F39 /* GlookoClassicAuthTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoClassicAuthTests.swift; path = GlookoServiceKitTests/GlookoClassicAuthTests.swift; sourceTree = "<group>"; };
 		24A71D8DBFA440C66EDE4E4A /* DomainTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DomainTests.swift; path = GlookoServiceKitTests/DomainTests.swift; sourceTree = "<group>"; };
-		2CDACBAF2299C0271BF8D4D0 /* GlookoDeflate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoDeflate.swift; path = GlookoServiceKit/Core/GlookoDeflate.swift; sourceTree = "<group>"; };
+		2CDACBAF2299C0271BF8D4D0 /* GlookoGUID.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoGUID.swift; path = GlookoServiceKit/Core/GlookoGUID.swift; sourceTree = "<group>"; };
 		33E87894F227C9815BA07061 /* CredentialStoreTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CredentialStoreTests.swift; path = GlookoServiceKitTests/CredentialStoreTests.swift; sourceTree = "<group>"; };
 		4456B9BB27D502AC92E6D958 /* LoopKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LoopKit.framework; path = LoopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45332C4F779855F755FB2F2D /* GlookoAPIError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoAPIError.swift; path = GlookoServiceKit/Domain/Models/GlookoAPIError.swift; sourceTree = "<group>"; };
 		5596CAF17A07F7EEA63A3B9C /* GlookoService+Auth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "GlookoService+Auth.swift"; path = "GlookoServiceKit/Service/GlookoService+Auth.swift"; sourceTree = "<group>"; };
+		C10CA1E70000000000000002 /* GlookoService+Alerts.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "GlookoService+Alerts.swift"; path = "GlookoServiceKit/Service/GlookoService+Alerts.swift"; sourceTree = "<group>"; };
 		5C951B20D3D61D0F25E15DCE /* GlookoIBFHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoIBFHeaders.swift; path = GlookoServiceKit/Domain/IBF/GlookoIBFHeaders.swift; sourceTree = "<group>"; };
 		5CBF97C28172F3C1B2068FCE /* GlookoServiceTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoServiceTests.swift; path = GlookoServiceKitTests/GlookoServiceTests.swift; sourceTree = "<group>"; };
+		C10CA1E70000000000000004 /* GlookoAlertTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoAlertTests.swift; path = GlookoServiceKitTests/GlookoAlertTests.swift; sourceTree = "<group>"; };
 		67388AAEEC05D06FB96D0780 /* GlookoCredentialStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoCredentialStore.swift; path = GlookoServiceKit/Data/Auth/GlookoCredentialStore.swift; sourceTree = "<group>"; };
 		729D97CAB74E3AB9E43F4E09 /* GlookoDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoDate.swift; path = GlookoServiceKit/Core/GlookoDate.swift; sourceTree = "<group>"; };
 		756F0CD862F969B45C684E4B /* GlookoXTBackend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlookoXTBackend.swift; path = GlookoServiceKit/Data/XT/GlookoXTBackend.swift; sourceTree = "<group>"; };
@@ -204,11 +214,14 @@
 			children = (
 				33E87894F227C9815BA07061 /* CredentialStoreTests.swift */,
 				24A71D8DBFA440C66EDE4E4A /* DomainTests.swift */,
+				123FEA35FD529A9FF6D76F39 /* GlookoClassicAuthTests.swift */,
+				7B34454665A51FEAE642C72E /* GlookoHourlyBasalTests.swift */,
 				1FEE2E5720B00B7634505579 /* GlookoClassicAPITests.swift */,
 				1FC0DCD35E56EB7D3CF15D2D /* GlookoClassicBackendTests.swift */,
 				09DA87519121828FAA412A39 /* GlookoClassicDTOTests.swift */,
 				8104DC853205F6386727031B /* GlookoIBFGeneratorTests.swift */,
 				5CBF97C28172F3C1B2068FCE /* GlookoServiceTests.swift */,
+				C10CA1E70000000000000004 /* GlookoAlertTests.swift */,
 				B2442975EF5165798A2930B0 /* GlookoXTClientTests.swift */,
 				8DE43AE7D52E94FFA663633F /* Support */,
 				208D1D9A6970B28A619FD9E7 /* XTRecordTests.swift */,
@@ -270,6 +283,7 @@
 				2379889C252C4C711939054B /* CSV */,
 				F715B7F256AD853F9281E3BE /* GlookoBackend.swift */,
 				07752C98DEBE3F5C96647A41 /* GlookoUploadCoordinator.swift */,
+				F01472F2AE01E02828EC487A /* GlookoHourlyBasal.swift */,
 				F3960A598E6F382B451A74F0 /* IBF */,
 				7F68E1A89DFDAFDDD95950E1 /* Models */,
 			);
@@ -334,7 +348,7 @@
 			children = (
 				FBED413C39F13F9C40618744 /* GlookoConstants.swift */,
 				729D97CAB74E3AB9E43F4E09 /* GlookoDate.swift */,
-				2CDACBAF2299C0271BF8D4D0 /* GlookoDeflate.swift */,
+				2CDACBAF2299C0271BF8D4D0 /* GlookoGUID.swift */,
 				17D64DE5E914C2273EB5155B /* GlookoLog.swift */,
 				C4753DAA260810F50613067D /* HKUnit+Glooko.swift */,
 				E35C8E1349E3638B103B8EEB /* LocalizedString.swift */,
@@ -366,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				5596CAF17A07F7EEA63A3B9C /* GlookoService+Auth.swift */,
+				C10CA1E70000000000000002 /* GlookoService+Alerts.swift */,
 				C6C7EC767142C0D3CE35D456 /* GlookoService.swift */,
 			);
 			name = Service;
@@ -580,7 +595,7 @@
 			files = (
 				ACAE87E1FA8F7A6E187C1C32 /* GlookoConstants.swift in Sources */,
 				012467A9698F6EFD7BC1D2C9 /* GlookoDate.swift in Sources */,
-				E6FF81D8EFB361E01815C8DA /* GlookoDeflate.swift in Sources */,
+				E6FF81D8EFB361E01815C8DA /* GlookoGUID.swift in Sources */,
 				B5F91A2CE01A75B491A0CFA5 /* GlookoLog.swift in Sources */,
 				0A80575B2D2AF3E14ABA1AC7 /* HKUnit+Glooko.swift in Sources */,
 				CA8DB114D8B80AB7E8718A25 /* LocalizedString.swift in Sources */,
@@ -597,6 +612,7 @@
 				73EBA9BFE5D36A21444DB960 /* GlookoLibreViewCSV.swift in Sources */,
 				DD23F3451AB7587D14B23DA2 /* GlookoBackend.swift in Sources */,
 				61160036A6C6C515786241C6 /* GlookoUploadCoordinator.swift in Sources */,
+				D033FC8EC982644CD376405D /* GlookoHourlyBasal.swift in Sources */,
 				DE4CD38C0D12F94C1B4FA8E6 /* GlookoIBFGenerator.swift in Sources */,
 				DBA1A31220C395E0BC1F7BE4 /* GlookoIBFHeaders.swift in Sources */,
 				D97408DBE8A5BA228F8A2406 /* GlookoAPIError.swift in Sources */,
@@ -605,6 +621,7 @@
 				3BB0484333AE5E522B797B96 /* GlookoVariant.swift in Sources */,
 				FC881849CC10C56E51DE1805 /* GlucoseUnitPreference.swift in Sources */,
 				5F739B1FF80CE3C068F106B2 /* GlookoService+Auth.swift in Sources */,
+				C10CA1E70000000000000001 /* GlookoService+Alerts.swift in Sources */,
 				4A964E044CD08E41D4D38EC8 /* GlookoService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -615,11 +632,14 @@
 			files = (
 				8E1BFA337BEDC9D969B05655 /* CredentialStoreTests.swift in Sources */,
 				449637ED7D0340E10F5017CD /* DomainTests.swift in Sources */,
+				8B9F30B7CAD09E59CFE50E57 /* GlookoClassicAuthTests.swift in Sources */,
+				F5BFD7F20488B3FB472BC457 /* GlookoHourlyBasalTests.swift in Sources */,
 				F0E018D12307CAA435FEC200 /* GlookoClassicAPITests.swift in Sources */,
 				86E7C021C01770B40115DB4B /* GlookoClassicBackendTests.swift in Sources */,
 				E7D3B27AF74500FCB1B075AE /* GlookoClassicDTOTests.swift in Sources */,
 				FD4B8BD63747CD54EEF715D5 /* GlookoIBFGeneratorTests.swift in Sources */,
 				AED61BA1F26FA38E30839175 /* GlookoServiceTests.swift in Sources */,
+				C10CA1E70000000000000003 /* GlookoAlertTests.swift in Sources */,
 				9F7C131F3E8A5781E1E75EFA /* GlookoXTClientTests.swift in Sources */,
 				62174312B9F79223550F67DE /* AsyncTesting.swift in Sources */,
 				0E83A6FB7D8199D3FD292C08 /* MockHTTPTransport.swift in Sources */,

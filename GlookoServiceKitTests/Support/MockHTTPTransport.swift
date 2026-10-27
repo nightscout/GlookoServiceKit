@@ -3,18 +3,24 @@ import XCTest
 @testable import GlookoServiceKit
 
 final class MockHTTPTransport: GlookoHTTPTransport {
-    private(set) var requests: [URLRequest] = []
+    private let lock = NSLock()
+    private var recorded: [URLRequest] = []
     private var handler: (URLRequest, Int) throws -> (Data, HTTPURLResponse)
     private var callIndex = 0
+
+    var requests: [URLRequest] { lock.lock(); defer { lock.unlock() }; return recorded }
 
     init(handler: @escaping (URLRequest, Int) throws -> (Data, HTTPURLResponse)) {
         self.handler = handler
     }
 
     func send(_ request: URLRequest) async throws -> (Data, HTTPURLResponse) {
-        requests.append(request)
-        defer { callIndex += 1 }
-        return try handler(request, callIndex)
+        lock.lock()
+        recorded.append(request)
+        let index = callIndex
+        callIndex += 1
+        lock.unlock()
+        return try handler(request, index)
     }
 
     var lastBody: Data? { requests.last?.httpBody }

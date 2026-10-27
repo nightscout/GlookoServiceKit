@@ -9,10 +9,11 @@ public final class GlookoXTBackend: GlookoBackend {
     private let token: String?
     private let api: GlookoXTClient
 
-    public init(configuration: GlookoService.Configuration, token: String?) {
+    public init(configuration: GlookoService.Configuration, token: String?,
+                identity: GlookoClientIdentity = GlookoClientIdentity(), api: GlookoXTClient? = nil) {
         self.config = configuration
         self.token = token
-        self.api = GlookoXTClient(token: token)
+        self.api = api ?? GlookoXTClient(token: token, identity: identity)
     }
 
     public var isConfigured: Bool { token != nil }
@@ -34,10 +35,8 @@ public final class GlookoXTBackend: GlookoBackend {
         })
     }
 
-    public func uploadDoses(created: [DoseEntry], deleted: [DoseEntry]) async throws {
-        let records = created.compactMap { Self.map($0) }
-        try await send(records)
-    }
+    // Boluses and basal ride in the deduplicated .ibf snapshot; moments are not deduplicated and have no delete.
+    public func uploadDoses(created: [DoseEntry], deleted: [DoseEntry]) async throws {}
 
     public func uploadCarbs(created: [SyncCarbObject], updated: [SyncCarbObject],
                             deleted: [SyncCarbObject]) async throws {
@@ -66,30 +65,6 @@ public final class GlookoXTBackend: GlookoBackend {
             }
         }
         try await send(records)
-    }
-
-    static func map(_ dose: DoseEntry) -> GlookoRecord? {
-        let units = dose.deliveredUnits ?? dose.programmedUnits
-        let durationMin = max(0, Int(dose.endDate.timeIntervalSince(dose.startDate) / 60))
-        switch dose.type {
-        case .bolus:
-
-            return dose.automatic == true
-                ? GlookoRecordBuilder.smb(dose.startDate, units: units)
-                : GlookoRecordBuilder.bolus(dose.startDate, units: units, correction: false)
-        case .tempBasal:
-            return GlookoRecordBuilder.scheduledBasal(dose.startDate, rateUPerHour: dose.unitsPerHour,
-                                                      durationMin: durationMin)
-        case .basal:
-            return GlookoRecordBuilder.scheduledBasal(dose.startDate, rateUPerHour: dose.unitsPerHour,
-                                                      durationMin: durationMin)
-        case .suspend:
-            return GlookoRecordBuilder.suspend(dose.startDate, note: "Suspend")
-        case .resume:
-            return nil
-        @unknown default:
-            return nil
-        }
     }
 
     private func send(_ records: [GlookoRecord]) async throws {

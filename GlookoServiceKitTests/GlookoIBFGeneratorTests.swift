@@ -38,7 +38,7 @@ final class GlookoIBFGeneratorTests: XCTestCase {
     func testManufacturingIsSyntheticTrioSerial() {
         let recs = records(GlookoIBFHeaders.block(historyFirstIndex: 0, historyLastIndex: 1, alarmFirstIndex: 0, alarmLastIndex: 1))
         let serial = String(bytes: recs[2].prefix(while: { $0 != 0 }), encoding: .utf8)
-        XCTAssertEqual(serial, "TRIO000-VPOD0001-T00001")
+        XCTAssertEqual(serial, "TRIO000-VPOD0001-T0000")  // 23-byte field keeps a trailing NUL
     }
 
     func testVersionsAre017() {

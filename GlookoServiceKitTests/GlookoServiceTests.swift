@@ -9,6 +9,20 @@ private final class MockStateDelegate: StatefulPluggableDelegate {
     func pluginWantsDeletion(_ plugin: StatefulPluggable) { deletions += 1 }
 }
 
+private final class MockBackend: GlookoBackend {
+    let variant: GlookoVariant = .classic
+    var isConfigured = true
+    var snapshots = 0
+    func prepare() async throws {}
+    func uploadGlucose(_ samples: [StoredGlucoseSample]) async throws {}
+    func uploadDoses(created: [DoseEntry], deleted: [DoseEntry]) async throws {}
+    func uploadCarbs(created: [SyncCarbObject], updated: [SyncCarbObject], deleted: [SyncCarbObject]) async throws {}
+    func uploadPumpEvents(_ events: [PersistedPumpEvent]) async throws {}
+    func uploadPumpSnapshot(basal: [DoseEntry], boluses: [DoseEntry], carbs: [SyncCarbObject], now: Date) async throws {
+        snapshots += 1
+    }
+}
+
 final class GlookoServiceTests: XCTestCase {
 
     private func makeService() -> (GlookoService, MockStateDelegate) {
@@ -116,6 +130,35 @@ final class GlookoServiceTests: XCTestCase {
         await assertFailure { service.uploadDoseData(created: [], deleted: [], completion: $0) }
         await assertFailure { service.uploadCarbData(created: [], updated: [], deleted: [], completion: $0) }
         await assertFailure { service.uploadPumpEventData([], completion: $0) }
+    }
+
+    func testRawStateKeepsHostIdentity() throws {
+        let service = GlookoService(hostIdentifier: "org.nightscout.Trio", hostVersion: "2.0")
+        let restored = try XCTUnwrap(GlookoService(rawState: service.rawState))
+        XCTAssertEqual(restored.identity, GlookoClientIdentity(hostIdentifier: "org.nightscout.Trio", hostVersion: "2.0"))
+    }
+
+    func testCompleteDeleteClearsCredentials() throws {
+        let (service, _) = makeService()
+        service.token = "jwt"
+        try service.credentialStore.set("pw", for: service.classicPasswordKey)
+        service.completeDelete()
+        XCTAssertNil(service.token)
+        XCTAssertNil(try service.credentialStore.value(for: service.classicPasswordKey))
+    }
+
+    func testSnapshotStatsAccumulate() async {
+        let (service, _) = makeService()
+        let backend = MockBackend()
+        service.backendOverride = backend
+        service.reload()
+        let now = Date()
+        let bolus = DoseEntry(type: .bolus, startDate: now, endDate: now, value: 1, unit: .units)
+        await assertSuccess { service.uploadPumpSnapshot(basal: [], boluses: [bolus, bolus], carbs: [], completion: $0) }
+        await assertSuccess { service.uploadPumpSnapshot(basal: [], boluses: [bolus], carbs: [], completion: $0) }
+        XCTAssertEqual(backend.snapshots, 2)
+        XCTAssertEqual(service.stats.doses, 3)
+        XCTAssertNotNil(service.stats.lastUploadDate)
     }
 
     private func assertSuccess(_ call: (@escaping (Result<Bool, Error>) -> Void) -> Void) async {

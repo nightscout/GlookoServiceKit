@@ -18,7 +18,7 @@ enum GlookoLibreViewCSV {
         var rows = ["Glucose,Generated on,\(formatter.string(from: Date())),Trio,Trio CGM", header]
         for sample in samples.sorted(by: { $0.startDate < $1.startDate }) {
             let mgdl = Int(sample.quantity.doubleValue(for: .gkMilligramsPerDeciliter).rounded())
-            rows.append("FreeStyle LibreLink,Trio,\(formatter.string(from: sample.startDate)),0,\(mgdl),,,,,,,,,,,,,,")
+            rows.append("Trio CGM,Trio,\(formatter.string(from: sample.startDate)),0,\(mgdl),,,,,,,,,,,,,,")
         }
         return rows.joined(separator: "\n") + "\n"
     }

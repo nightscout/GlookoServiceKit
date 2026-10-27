@@ -5,7 +5,7 @@ public extension GlookoService {
     func requestLoginCode(email: String, password: String) async throws {
         switch configuration.variant {
         case .xt:
-            try await GlookoXTClient().requestCode(email: email, password: password)
+            try await GlookoXTClient(identity: identity).requestCode(email: email, password: password)
         case .classic:
             throw GlookoAPIError.server("Classic Glooko not yet supported")
         }
@@ -14,10 +14,11 @@ public extension GlookoService {
     func authenticate(email: String, code: String) async throws {
         switch configuration.variant {
         case .xt:
-            let jwt = try await GlookoXTClient().authenticate(email: email, code: code)
+            let jwt = try await GlookoXTClient(identity: identity).authenticate(email: email, code: code)
             configuration.email = email
             token = jwt
             reload()
+            await recordSuccess()
         case .classic:
             throw GlookoAPIError.server("Classic uses email + password — call connectClassic(email:password:)")
         }
@@ -26,7 +27,7 @@ public extension GlookoService {
     func connectClassic(email: String, password: String) async throws {
         let api = GlookoClassicAPI(region: configuration.classicRegion,
                                    credentials: (email: email, password: password),
-                                   deviceId: configuration.id)
+                                   identity: identity)
         do {
             try await api.ensureSession()
         } catch GlookoAPIError.twoFactorRequired {
@@ -55,10 +56,12 @@ public extension GlookoService {
         configuration.email = email
         credentials.classicPassword = password
         token = api.sessionCookie
+        Task { @MainActor in recordSuccess() }
         reload()
     }
 
     func signOut() {
+        Task { @MainActor in retractAlerts() }
         credentials.clear()
         configuration.email = nil
         stateDelegate?.pluginWantsDeletion(self)

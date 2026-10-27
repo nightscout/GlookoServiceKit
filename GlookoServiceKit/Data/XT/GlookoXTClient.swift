@@ -4,10 +4,13 @@ public final class GlookoXTClient {
     public private(set) var token: String?
 
     private let transport: GlookoHTTPTransport
+    private let identity: GlookoClientIdentity
     private var socket: GlookoSocketIO?
 
-    public init(token: String? = nil, transport: GlookoHTTPTransport = URLSessionTransport()) {
+    public init(token: String? = nil, identity: GlookoClientIdentity = GlookoClientIdentity(),
+                transport: GlookoHTTPTransport = URLSessionTransport()) {
         self.token = token
+        self.identity = identity
         self.transport = transport
     }
 
@@ -28,6 +31,7 @@ public final class GlookoXTClient {
         request.httpMethod = "POST"
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.setValue("", forHTTPHeaderField: "x-ab-token")
+        request.setValue(identity.userAgent, forHTTPHeaderField: "User-Agent")
         request.httpBody = try JSONSerialization.data(withJSONObject: body)
         let (data, http) = try await transport.send(request)
         guard (200 ... 299).contains(http.statusCode) else {
@@ -49,7 +53,7 @@ public final class GlookoXTClient {
 
     public func uploadIBF(_ ibf: Data, reference: Date = Date()) async throws {
         guard let token, let patientId else { throw GlookoAPIError.noToken }
-        GlookoLog.upload.info("uploadIBF: \(ibf.count) bytes, patient \(patientId, privacy: .public)")
+        GlookoLog.upload.info("uploadIBF: \(ibf.count) bytes")
 
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -62,18 +66,21 @@ public final class GlookoXTClient {
         request.httpMethod = "POST"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         request.setValue(GlookoConstants.XT.apiVersion, forHTTPHeaderField: "version")
+        request.setValue(identity.userAgent, forHTTPHeaderField: "User-Agent")
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         request.httpBody = Self.multipartBody(boundary: boundary, ibf: ibf,
-                                              fields: ["patient_id": patientId, "startDate": start, "endDate": end])
+                                              fields: [("patient_id", patientId), ("startDate", start), ("endDate", end)])
 
         let (data, http) = try await transport.send(request)
         guard (200 ... 299).contains(http.statusCode) else {
             GlookoLog.upload.error("uploadIBF failed: \(http.statusCode)")
-            throw GlookoAPIError.signIn(status: http.statusCode, body: data)
+            // XT has no refresh: an expired or revoked token needs a new emailed code
+            if http.statusCode == 401 || http.statusCode == 403 { throw GlookoAPIError.authenticationRequired }
+            throw GlookoAPIError.upload("upload/ibf", status: http.statusCode, body: data)
         }
     }
 
-    private static func multipartBody(boundary: String, ibf: Data, fields: [String: String]) -> Data {
+    static func multipartBody(boundary: String, ibf: Data, fields: [(String, String)]) -> Data {
         var body = Data()
         let dash = "--\(boundary)\r\n"
         for (name, value) in fields {
@@ -115,7 +122,7 @@ public final class GlookoXTClient {
             socket.emit("ADD_MANY_RECORDS", ["records": dicts]) { ack in
                 once.run {
                     let obj = Self.parseAck(ack)
-                    if let err = obj["error"] as? String { c.resume(throwing: GlookoAPIError.server(err)); return }
+                    if let err = obj["error"] as? String { c.resume(throwing: GlookoAPIError.server(GlookoRedact.text(err))); return }
                     let ids = (obj["collected_data"] as? [[String: Any]])?.compactMap { $0["id"] as? Int } ?? []
                     c.resume(returning: ids)
                 }

@@ -34,8 +34,8 @@ final class GlookoClassicAPITests: XCTestCase {
         XCTAssertEqual(api.sessionCookie, "_logbook-web_session=abc")
         let request = try XCTUnwrap(mock.requests.first)
         XCTAssertEqual(request.httpMethod, "POST")
-        XCTAssertEqual(request.url?.path, "/api/v2/users/sign_in")
-        let login = try XCTUnwrap(mock.bodyJSON(at: 0)?["userLogin"] as? [String: Any])
+        XCTAssertEqual(request.url?.path, "/api/v3/users/sign_in")
+        let login = try XCTUnwrap(mock.bodyJSON(at: 0)?["user"] as? [String: Any])
         XCTAssertEqual(login["email"] as? String, "user@x.com")
     }
 
@@ -104,19 +104,21 @@ final class GlookoClassicAPITests: XCTestCase {
         XCTAssertTrue(mock.requests.isEmpty)
     }
 
-    func testPutErrorThrows() async {
+    func testPutErrorThrowsUploadError() async {
         let mock = MockHTTPTransport { req, _ in try MockResponder.status(req, 422, body: Data(#"{"error":"bad"}"#.utf8)) }
         let api = GlookoClassicAPI(region: .eu, sessionCookie: "c", transport: mock)
         await XCTAssertThrowsErrorAsync(
             try await api.put(endpoint: "readings", jsonName: "readings",
-                              items: [GKReading(guid: "g", syncTimestamp: "s", timestamp: "t", value: 1, userMealTag: 0)]))
+                              items: [GKReading(guid: "g", syncTimestamp: "s", timestamp: "t", value: 1, userMealTag: 0)])) {
+            XCTAssertEqual($0 as? GlookoAPIError, .upload(endpoint: "readings", status: 422, message: #"{"error":"bad"}"#))
+        }
     }
 
     func testPutRetriesOnceAfter401() async throws {
         var readingsCalls = 0
         let mock = MockHTTPTransport { req, _ in
             switch req.url?.path {
-            case "/api/v2/users/sign_in": return try MockResponder.ok(req, setCookie: self.cookie)
+            case "/api/v3/users/sign_in": return try MockResponder.ok(req, setCookie: self.cookie)
             case "/api/v2/readings":
                 readingsCalls += 1
                 return try MockResponder.status(req, readingsCalls == 1 ? 401 : 204)
@@ -128,7 +130,7 @@ final class GlookoClassicAPITests: XCTestCase {
                           items: [GKReading(guid: "g", syncTimestamp: "s", timestamp: "t", value: 1, userMealTag: 0)])
         XCTAssertEqual(readingsCalls, 2)
         XCTAssertEqual(mock.requests.map { $0.url?.path },
-                       ["/api/v2/readings", "/api/v2/users/sign_in", "/api/v2/readings"])
+                       ["/api/v2/readings", "/api/v3/users/sign_in", "/api/v2/readings"])
     }
 
     func testUploadDeviceFileOctetStream() async throws {

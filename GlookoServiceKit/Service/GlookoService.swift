@@ -27,12 +27,15 @@ public final class GlookoService: Service, ObservableObject {
         public var doses = 0
         public var carbs = 0
         public var pumpEvents = 0
+        public var failingSince: Date?
+        public var activeAlerts: [String]?
     }
 
     @Published public var configuration: Configuration
     @Published public var stats = UploadStats()
     @Published public var lastError: String?
     public var isOnboarded: Bool
+    public private(set) var identity: GlookoClientIdentity
 
     public var credentialStore: GlookoCredentialStore = KeychainCredentialStore()
 
@@ -52,6 +55,7 @@ public final class GlookoService: Service, ObservableObject {
     public init(hostIdentifier: String, hostVersion: String) {
         self.configuration = Configuration()
         self.isOnboarded = false
+        self.identity = GlookoClientIdentity(hostIdentifier: hostIdentifier, hostVersion: hostVersion)
     }
 
     public init?(rawState: RawStateValue) {
@@ -61,6 +65,8 @@ public final class GlookoService: Service, ObservableObject {
         }
         self.configuration = config
         self.isOnboarded = (rawState["isOnboarded"] as? Bool) ?? true
+        self.identity = GlookoClientIdentity(hostIdentifier: rawState["hostIdentifier"] as? String ?? "unknown",
+                                             hostVersion: rawState["hostVersion"] as? String ?? "0")
         if let statsData = rawState["stats"] as? Data,
            let saved = try? JSONDecoder().decode(UploadStats.self, from: statsData) {
             self.stats = saved
@@ -68,7 +74,8 @@ public final class GlookoService: Service, ObservableObject {
     }
 
     public var rawState: RawStateValue {
-        var raw: RawStateValue = ["isOnboarded": isOnboarded]
+        var raw: RawStateValue = ["isOnboarded": isOnboarded,
+                                  "hostIdentifier": identity.hostIdentifier, "hostVersion": identity.hostVersion]
         if let data = try? JSONEncoder().encode(configuration) { raw["configuration"] = data }
         if let data = try? JSONEncoder().encode(stats) { raw["stats"] = data }
         return raw
@@ -77,21 +84,29 @@ public final class GlookoService: Service, ObservableObject {
     public func completeCreate() { persist() }
     public func completeUpdate() { persist(); stateDelegate?.pluginDidUpdateState(self) }
     public func completeOnboard() { isOnboarded = true; persist(); stateDelegate?.pluginDidUpdateState(self) }
-    public func completeDelete() { backend.tearDown(); stateDelegate?.pluginWantsDeletion(self) }
+    public func completeDelete() {
+        Task { @MainActor in retractAlerts() }
+        backend.tearDown()
+        credentials.clear()
+        stateDelegate?.pluginWantsDeletion(self)
+    }
 
-    private func persist() { stateDelegate?.pluginDidUpdateState(self) }
+    func persist() { stateDelegate?.pluginDidUpdateState(self) }
 
     public func reload() { backend.tearDown(); backend = makeBackend() }
 
+    var backendOverride: GlookoBackend?
+
     private func makeBackend() -> GlookoBackend {
+        if let backendOverride { return backendOverride }
         switch configuration.variant {
         case .xt:
-            return GlookoXTBackend(configuration: configuration, token: token)
+            return GlookoXTBackend(configuration: configuration, token: token, identity: identity)
         case .classic:
 
             let creds = classicCredentials()
             return GlookoClassicBackend(configuration: configuration,
-                                        sessionCookie: token, credentials: creds)
+                                        sessionCookie: token, credentials: creds, identity: identity)
         }
     }
 
@@ -161,9 +176,8 @@ extension GlookoService: RemoteDataService {
                                    now: Date = Date(),
                                    completion: @escaping (Result<Bool, Error>) -> Void) {
         run(completion, record: { stats in
-            stats.doses = basal.count + boluses.count
-            stats.carbs = carbs.count
-            stats.pumpEvents = basal.count + boluses.count + carbs.count
+            stats.doses += boluses.count
+            stats.carbs += carbs.count
         }) {
             try await $0.uploadPumpSnapshot(basal: basal, boluses: boluses, carbs: carbs, now: now)
         }
@@ -175,18 +189,29 @@ extension GlookoService: RemoteDataService {
         Task {
             do {
                 try await coordinator.perform(work)
+                let cookie = (backend as? GlookoClassicBackend)?.sessionCookie
                 await MainActor.run {
+                    if let cookie, cookie != token { token = cookie }
                     record(&stats)
                     stats.lastUploadDate = Date()
                     lastError = nil
+                    recordSuccess()
                     persist()
                 }
                 completion(.success(true))
             } catch {
-                GlookoLog.upload.error("upload failed: \(error.localizedDescription)")
-                await MainActor.run { self.lastError = error.localizedDescription }
+                let message = GlookoRedact.text(error.localizedDescription)
+                GlookoLog.upload.error("upload failed: \(message, privacy: .public)")
+                await MainActor.run {
+                    self.lastError = message
+                    self.recordFailure(error)
+                }
                 completion(.failure(error))
             }
         }
     }
+}
+
+extension GlookoService {
+    var classicPasswordKey: String { credentials.passwordKey }
 }

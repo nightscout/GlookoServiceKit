@@ -24,5 +24,5 @@ struct GlookoCredentials {
         classicPassword = nil
     }
 
-    private var passwordKey: String { "\(id).password" }
+    var passwordKey: String { "\(id).password" }
 }

@@ -20,7 +20,7 @@ enum GlookoSignInMessage {
             return LocalizedString("Glooko had a server error during sign-in. Please try again later.", comment: "Glooko 5xx")
         default:
             let raw = serverMessage(from: body)
-            return raw.map { LocalizedString("Sign-in failed: \($0)", comment: "Glooko generic") }
+            return raw.map { LocalizedString("Sign-in failed: \(GlookoRedact.text($0))", comment: "Glooko generic") }
                 ?? LocalizedString("Sign-in failed (HTTP \(status)).", comment: "Glooko generic http")
         }
     }

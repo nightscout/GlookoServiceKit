@@ -75,42 +75,4 @@ final class XTRecordTests: XCTestCase {
     func testISOFormat() {
         XCTAssertEqual(GlookoRecord.iso(Date(timeIntervalSince1970: 0)), "1970-01-01T00:00:00.000Z")
     }
-
-    func testMapManualBolus() {
-        let dose = DoseEntry(type: .bolus, startDate: Date(), endDate: Date(), value: 3, unit: .units)
-        let record = GlookoXTBackend.map(dose)
-        XCTAssertEqual(record?.fast_insulin, 3)
-        XCTAssertNil(record?.note)
-    }
-
-    func testMapAutomaticBolusIsSMB() {
-        let dose = DoseEntry(type: .bolus, startDate: Date(), endDate: Date(), value: 0.4, unit: .units, automatic: true)
-        XCTAssertEqual(GlookoXTBackend.map(dose)?.note, "SMB")
-    }
-
-    func testMapTempBasalWithScheduleIsPercentage() {
-        let now = Date()
-        let dose = DoseEntry(type: .tempBasal, startDate: now, endDate: now.addingTimeInterval(1800),
-                             value: 2.0, unit: .unitsPerHour,
-                             scheduledBasalRate: HKQuantity(unit: iuhr, doubleValue: 1.0))
-        let record = GlookoXTBackend.map(dose)
-        XCTAssertEqual(record?.rate_percentage, 200)
-        XCTAssertEqual(record?.product_pump_id, 96)
-    }
-
-    func testMapTempBasalWithoutScheduleIsAbsolute() {
-        let now = Date()
-        let dose = DoseEntry(type: .tempBasal, startDate: now, endDate: now.addingTimeInterval(1800),
-                             value: 1.2, unit: .unitsPerHour)
-        let record = GlookoXTBackend.map(dose)
-        XCTAssertEqual(record?.basal_rate, 1.2)
-        XCTAssertNil(record?.rate_percentage)
-    }
-
-    func testMapBasalAndSuspendAndResume() {
-        let now = Date()
-        XCTAssertEqual(GlookoXTBackend.map(DoseEntry(type: .basal, startDate: now, endDate: now.addingTimeInterval(3600), value: 0.7, unit: .unitsPerHour))?.basal_rate, 0.7)
-        XCTAssertEqual(GlookoXTBackend.map(DoseEntry(type: .suspend, startDate: now, endDate: now, value: 0, unit: .units))?.pump_stop, true)
-        XCTAssertNil(GlookoXTBackend.map(DoseEntry(type: .resume, startDate: now, endDate: now, value: 0, unit: .units)))
-    }
 }

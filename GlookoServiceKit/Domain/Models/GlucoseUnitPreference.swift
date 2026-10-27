@@ -1,4 +1,5 @@
 import Foundation
+import HealthKit
 
 public enum GlucoseUnitPreference: String, Codable {
     case mgdl
@@ -7,7 +8,9 @@ public enum GlucoseUnitPreference: String, Codable {
     public func encode(mgdl: Double) -> Double {
         switch self {
         case .mgdl: return mgdl.rounded()
-        case .mmol: return (mgdl * 0.0555 * 10).rounded() / 10
+        case .mmol:
+            let mmol = HKQuantity(unit: .gkMilligramsPerDeciliter, doubleValue: mgdl).doubleValue(for: .gkMillimolesPerLiter)
+            return (mmol * 10).rounded() / 10
         }
     }
 }
